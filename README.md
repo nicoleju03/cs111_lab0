@@ -1,22 +1,20 @@
 # A Kernel Seedling
 
-One sentence description
+A kernel module that counts the number of running processes and adds it to a file in /proc.
 
 ## Building
 
-Explain how to build your kernel module
+Run ```make``` to build the kernel module and ```sudo insmod proc_count.ko``` to load the module into the kernel.
 
 ## Running
 
-Explain how to run your kernel module and what to expect
+Run the code with the command ```cat /proc/count``` It will print to the terminal an integer that represents the number of processes that are currently running. We can also look at the information messages printed in the kernel with ```sudo dmesg -l info```
 
 ## Cleaning Up
 
-Explain how to remove your kernel module and clean up the code
+Remove the kernel module by running ```sudo rmmod proc_count``` Clean the code with ```make clean```
 
 ## Testing
 
-Report which kernel release version you tested your module on
-(hint: use `uname`, check for options with `man uname`).
-It should match release numbers as seen on https://www.kernel.org/.
+Run the provided test cases with ```python -m unittest``` I tested my module on kernel release 5.14.8-arch1-1.
 
